@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # importing dataset
-dataset = pd.read_csv(r'D:\Learning\Udemy ML\MLPracticeProjects\Simple Linear Regression\Salary_Data.csv')
+dataset = pd.read_csv(r'D:\Learning\Udemy ML\MLPracticeProjects\Regression\Simple Linear Regression\Salary_Data.csv')
 x = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, -1].values
 
