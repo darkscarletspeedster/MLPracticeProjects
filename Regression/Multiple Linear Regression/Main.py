@@ -28,3 +28,10 @@ y_pred = regressor.predict(x_test)
 np.set_printoptions(precision = 2) # limits to 2 decimal places
 print(np.concatenate((y_pred.reshape(len(y_pred), 1), y_test.reshape(len(y_test), 1)), 1)) #reshaping makes print vertically instead of horizontally reshape(rows, columns)
 # 1 in second parameter of concatenate means vertical concatenation
+
+# predicting single outcome
+print('Single prediction: ', regressor.predict([[1, 0, 0, 160000, 130000, 300000]]))
+
+# Coefficient and Intercept
+print('Coefficients: ', regressor.coef_)
+print('intercept: ', regressor.intercept_)
