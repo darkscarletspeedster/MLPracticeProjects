@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # Importing the dataset
-dataset = pd.read_csv(r'D:\Learning\Udemy ML\MLPracticeProjects\Classification\SVM Intuition\Social_Network_Ads.csv')
+dataset = pd.read_csv(r'D:\Learning\Udemy ML\MLPracticeProjects\Classification\Kernel SVM Intuition\Social_Network_Ads.csv')
 x = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, -1].values
 
