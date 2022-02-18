@@ -6,7 +6,7 @@ import pandas as pd
 # Importing the dataset
 dataset = pd.read_csv(r'D:\Learning\Udemy ML\MLPracticeProjects\Clustering\K-Means Clustering\Mall_Customers.csv')
 x = dataset.iloc[:, [3, 4]].values # first column has customer Ids which is irrelavent and only last two
-    # columns are considered so that K-means ka be visualized easily on a 2-D graph
+    # columns are considered so that K-means can be visualized easily on a 2-D graph
 
 # Using the elbow method to find the optimal number of clusters
 from sklearn.cluster import KMeans
