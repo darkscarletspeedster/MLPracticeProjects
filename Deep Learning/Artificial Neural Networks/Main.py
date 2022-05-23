@@ -10,7 +10,7 @@ print(tf.__version__) # helps to see version of any library
 # Importing the dataset
 dataset = pd.read_csv(r'D:\Learning\Udemy ML\MLPracticeProjects\Deep Learning\Artificial Neural Networks\Churn_Modelling.csv')
 x = dataset.iloc[:, 3:-1].values # starting columns are irrelevant
-y = dataset.iloc[:, -1]
+y = dataset.iloc[:, -1].values
 
 # Encoding categorical data
 from sklearn.preprocessing import LabelEncoder
