@@ -42,6 +42,19 @@ print("Standard Deviation: {:.2f} %".format(accuracies.std() * 100)) # calulate 
     # it is done to check the variance between the accuracies and if they are close or far from each other
     # more than 4 is a bit higher stating that accuracies lie between 86-94 if mean is 90
 
+# Applying Grid Search to find the best model and the best parameters
+from sklearn.model_selection import GridSearchCV
+parameters = [{'C': [0.25, 0.5, 0.75, 1], 'kernel': ['linear']}, # contains different combinations of super parameters we intent to tune in
+        # c is used for reducing overfitting, less the value of c, better the regualrization 
+    {'C': [0.25, 0.5, 0.75, 1], 'kernel': ['rbf'], # 2 dictionares as Gamma function is used only in rbf kernel, it is the coefficient of its formula
+        'gamma':[0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]}]
+grid = GridSearchCV(estimator = classifier, param_grid = parameters, scoring = 'accuracy',
+    cv = 10, n_jobs = -1) # n_jobs is optional and using -1 says that use all processors as this is a heavy process
+grid.fit(x_train, y_train) # training for all combinations of hyper paramters
+best_accuracy = grid.best_score_
+best_params = grid.best_params_
+print("Best Accurancy: {:.2f} %".format(best_accuracy * 100))
+print("Best Paramters: ", best_params)
 
 # Visualising the Training set results
 # Code only for training purposes and not real life situation as real life sit  uation would have more than 2 features where it isn't used
