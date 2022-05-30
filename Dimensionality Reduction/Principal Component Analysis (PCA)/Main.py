@@ -20,10 +20,11 @@ x_test = sc.transform(x_test)
 
 # Applying PCA
 # reduce dimensions before training
-from sklearn.decomposition import PCA
-pca = PCA(n_components = 2) # number of final components needed
+from sklearn.decomposition import KernelPCA
+pca = KernelPCA(n_components = 2, kernel = 'rbf') # number of final components needed
     # here 2 as if results are great we can see on graphs
     # if ouput is poor than we can increase them
+    # not all the time a kernel improves the performance of the model but here it does
 x_train = pca.fit_transform(x_train)
 x_test = pca.transform(x_test)
 
