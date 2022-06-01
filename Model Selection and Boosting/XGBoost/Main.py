@@ -17,6 +17,7 @@ from sklearn.preprocessing import LabelEncoder
 le = LabelEncoder()
 y_train = le.fit_transform(y_train) # new version requires this extra steps
     # need to understand this as giving wrong accuracy score
+y_test = le.transform(y_test)
 
 from xgboost import XGBClassifier # XGBRegressor gives us regression model
 classifier = XGBClassifier()
