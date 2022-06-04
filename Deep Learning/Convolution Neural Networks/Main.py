@@ -84,7 +84,7 @@ test_image = np.expand_dims(test_image, axis = 0) # this adds batch dimension to
 result = cnn.predict(test_image)
 print('Class Defination: ', training_set.class_indices)
 
-if result[0][0] == 1: # first box is to excess the batch
+if result[0][0] > 0.5: # first box is to excess the batch, 0.5 increases accuracy
     prediction = 'dog'
 else :
     prediction = 'cat'
