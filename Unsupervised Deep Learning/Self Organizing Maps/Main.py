@@ -1,5 +1,4 @@
 # Importing the libraries
-from cProfile import label
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -30,7 +29,19 @@ from pylab import bone, pcolor, colorbar, plot, show, subplots, scatter
 
 fig, ax = subplots()
 bone()
-pcolor(som.distance_map().T) # T is for taking transpose
+dist = som.distance_map()
+
+cordinates = []
+for i in range(0, 10):
+    arr = dist[i]
+    arr = np.where(arr >= 0.9)
+    if len(arr[0]) != 0:
+        for j in arr:
+            cordinates.append((i, j[0]))
+
+print("1's at: ", cordinates)
+
+pcolor(dist.T) # T is for taking transpose
 colorbar() #(orientation = 'horizontal')
 markers = ['o', 's']
 colors = ['r', 'c']
